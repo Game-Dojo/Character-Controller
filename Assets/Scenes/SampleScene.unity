@@ -158,6 +158,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1192120093}
     m_Modifications:
+    - target: {fileID: 1201128900954399020, guid: 2e114bb5f61d3ad4e81f0bc87bce1801, type: 3}
+      propertyPath: m_Mass
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2747771663582575228, guid: 2e114bb5f61d3ad4e81f0bc87bce1801, type: 3}
       propertyPath: m_Name
       value: Crate (1)
@@ -1448,6 +1452,7 @@ MonoBehaviour:
   moveAction: {fileID: -7822418002801737839, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   movementSpeed: 5
   jumpHeight: 1
+  rotationSpeed: 60
   gravityScale: 1
   fallGravityScale: 2.6
 --- !u!114 &1315139046
@@ -1577,6 +1582,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1192120093}
     m_Modifications:
+    - target: {fileID: 1201128900954399020, guid: 2e114bb5f61d3ad4e81f0bc87bce1801, type: 3}
+      propertyPath: m_Mass
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2747771663582575228, guid: 2e114bb5f61d3ad4e81f0bc87bce1801, type: 3}
       propertyPath: m_Name
       value: Crate

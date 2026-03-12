@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("Props")]
     [SerializeField] private float movementSpeed = 5.0f;
     [SerializeField] private float jumpHeight = 10.0f;
+    [SerializeField] private float rotationSpeed = 60.0f;
     
     [SerializeField] private float gravityScale = 1.0f;
     [SerializeField] private float fallGravityScale = 2.6f;
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
     
     private void RotatePlayer(Vector3 direction)
     {
-        transform.forward = direction;
+        transform.forward = Vector3.Lerp(transform.forward, direction, rotationSpeed*Time.deltaTime);
     }
     
     private void CheckJump()
