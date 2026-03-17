@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private Animator playerAnimator;
+    
     [Header("Actions")]
     [SerializeField] private InputActionReference jumpAction;
     [SerializeField] private InputActionReference moveAction;
@@ -11,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpHeight = 10.0f;
     [SerializeField] private float rotationSpeed = 60.0f;
     
+    [Header("Gravity")]
     [SerializeField] private float gravityScale = 1.0f;
     [SerializeField] private float fallGravityScale = 2.6f;
     
@@ -62,6 +65,8 @@ public class PlayerController : MonoBehaviour
     private void ApplyMovement(Vector3 movement)
     {
         var finalMovement = movement * movementSpeed + _velocity;
+        playerAnimator.SetFloat("Velocity", movement.magnitude);
+
         _controller.Move(finalMovement * Time.deltaTime);
     }
     
@@ -75,6 +80,7 @@ public class PlayerController : MonoBehaviour
         if (_isGrounded && jumpAction.action.WasPressedThisFrame())
         {
             _velocity.y = Mathf.Sqrt(jumpHeight * -2f * (Gravity * gravityScale));
+            playerAnimator.SetTrigger("Jump");
         }
     }
 
